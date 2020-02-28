@@ -1,3 +1,3 @@
- ÊÖ»úTermux Flask ·şÎñÆ÷
-  °²×° Termux   Python  Flask
+ï»¿  æ‰‹æœºTermux Flask æœåŠ¡å™¨
+   å®‰è£… Termux   Python  Flask
    termux-setup-storage
