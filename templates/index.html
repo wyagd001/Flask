@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Android 服务器 </title>
+
+<style>
+h1 {
+  font-family: sans-serif;
+	color : green ;
+  font-size: 1.25em;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
+button {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  height: 48px;
+  vertical-align:middle;
+}
+
+input{
+vertical-align:middle;
+width: 700px; height: 48px;
+}
+
+body {
+	background-color : black ;
+	color : yellow ;
+	padding: 50px; width: auto; font-family: Sans-Serif; font-size: 16pt;
+}
+
+</style>
+</head>
+<body>
+<h1>Flask</h1>
+
+<p>文件下载(输入路径下载文件)</p>
+<form action="/download" method="get">
+<input type="text" id="1234" name="path" placeholder="路径例如：/storage/emulated/0/.termux/tasker2/pyWebServer2.py" value="">
+<span>
+<input type="submit" style="width: 80px; height: 55px;" value="下载">
+</span>
+</form>
+<p> &nbsp; </p>
+
+<p>文件上传(上传路径:)</p>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input style="color:#c2c2c2; background-color: white; width: 703px" type="file" name="file" />
+<span>
+    <input style="width: 80px; height: 50px;" type="submit" value="上传" />
+</span>
+</form>
+<p> &nbsp; </p>
+
+<p>读写文本</p>
+<form action="/submittext" method="get">
+<textarea style="vertical-align: middle; overflow: hidden; width: 698px;" type="text" id="1234" name="mytext" cols="40" rows="5">{{ textcontent }}</textarea>
+<span>
+<input type="submit" style="width: 80px; height: 55px;" value="保存文字" />
+</span>
+</form>
+<p> &nbsp; </p>
+
+<h1>执行手机Tasker任务</h1>
+
+<p>剪贴板(Tasker ↔ Flask ↔ AhkHttp)</p>
+<p>
+<form action="/clip" method="POST">
+<span>
+    <input style="width: 240px; height: 50px; vertical-align: middle; font-size: 1.5em" type="submit" value="设置手机剪贴板"> 将手机剪贴板设置为PC剪贴板的内容(上传)
+</span>
+</form>
+<br>
+<a href="/clip"> <button style="width: 240px;">获取手机剪贴板</button> </a>将PC剪贴板设置为手机剪贴板的内容(下载)
+</p>
+<p> &nbsp; </p>
+
+<p>手机截屏</p>
+<p>
+<a href="/screenshot"> <button>手机截屏显示</button> </a>
+</p>
+<p> &nbsp; </p>
+
+<p>文件上传</p>
+<a href="/ahkhttpupload"> <button> 下载AhkHttp分享的文件到服务器 </button> </a> 上传的一种方式
+<p> &nbsp; </p>
+
+</body>
+</html>
